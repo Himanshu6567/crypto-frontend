@@ -216,11 +216,11 @@ const BlogSection: React.FC = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="mt-16 text-center">
+        {/* <div className="mt-16 text-center">
           <Card className="text-white border-0 shadow-xl bg-gradient-to-r from-blue-600 to-purple-600">
             <CardContent className="p-8 sm:p-12">
               <h3 className="mb-4 text-2xl font-bold sm:text-3xl">
-                Want to Stay Updated?
+                Want to Stay Updated? hbhhhhhhh
               </h3>
               <p className="max-w-2xl mx-auto mb-6 text-lg text-blue-100">
                 Subscribe to our newsletter and never miss the latest insights on cryptocurrency trading and blockchain technology.
@@ -230,12 +230,12 @@ const BlogSection: React.FC = () => {
                 variant="secondary" 
                 className="px-8 font-semibold text-blue-600 bg-white hover:bg-gray-50"
               >
-                Subscribe Now
+                Subscribe Nowmnnnmn
                 <ChevronRight className="w-4 h-4 ml-2" />
               </Button>
             </CardContent>
           </Card>
-        </div>
+        </div> */}
       </div>
     </section>
   );

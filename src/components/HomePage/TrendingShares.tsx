@@ -242,9 +242,9 @@ const TrendingCryptos: React.FC<TrendingCryptosProps> = ({
           <p className="mb-6 text-gray-400">
             Want to explore more cryptocurrencies?
           </p>
-          <button className="px-8 py-3 font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 hover:scale-105 hover:shadow-purple-500/25">
+          <Link to={"/coins"} className="px-8 py-3 font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 hover:scale-105 hover:shadow-purple-500/25">
             View All Coins
-          </button>
+          </Link>
         </div>
       </div>
     </section>

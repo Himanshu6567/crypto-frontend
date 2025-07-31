@@ -17,6 +17,7 @@ import {
   Coins,
   BookOpen,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ExploreSection: React.FC = () => {
   const exploreItems = [
@@ -172,12 +173,12 @@ const ExploreSection: React.FC = () => {
             Ready to start your cryptocurrency journey?
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <button className="px-8 py-3 font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 hover:scale-105 hover:shadow-purple-500/25">
+            <Link to={"/coins"} className="px-8 py-3 font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 hover:scale-105 hover:shadow-purple-500/25">
               Get Started Today
-            </button>
-            <button className="px-8 py-3 font-semibold text-white transition-all duration-300 border rounded-full border-white/20 hover:bg-white/10 backdrop-blur-sm">
+            </Link>
+            <Link to={"/coins"} className="px-8 py-3 font-semibold text-white transition-all duration-300 border rounded-full border-white/20 hover:bg-white/10 backdrop-blur-sm">
               Browse All Resources
-            </button>
+            </Link>
           </div>
         </div>
       </div>

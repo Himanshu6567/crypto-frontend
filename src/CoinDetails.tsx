@@ -226,8 +226,9 @@ import { Card, CardContent } from "./components/ui/card";
 import { Badge } from "./components/ui/badge";
 import { Alert, AlertDescription } from "./components/ui/alert";
 import { Skeleton } from "./components/ui/skeleton";
-import { ArrowUpRight, ArrowDownRight } from "lucide-react";
+import { ArrowUpRight, ArrowDownRight, Loader, Loader2 } from "lucide-react";
 import Mapes from "./components/Charts/Mapes";
+import Loading from "./components/Loading/Loading";
 
 const CoinData = () => {
   const { name } = useParams<{ name: string }>();
@@ -235,13 +236,12 @@ const CoinData = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-
-
   useEffect(() => {
-
     const fetchCoinDetails = async () => {
       try {
-        const response = await fetch(`https://crypto-backend-2y2c.onrender.com/api/coindetails/${name}`);
+        const response = await fetch(
+          `https://crypto-backend-2y2c.onrender.com/api/coindetails/${name}`
+        );
         if (!response.ok) throw new Error("Failed to fetch coin details");
         const data = await response.json();
         setCoin(data);
@@ -257,10 +257,15 @@ const CoinData = () => {
 
   if (loading) {
     return (
-      <div className="max-w-4xl p-4 mx-auto mt-10 space-y-6">
-        <Skeleton className="w-40 h-10" />
-        <Skeleton className="w-32 h-32 rounded-full" />
-        <Skeleton className="w-full h-6" />
+      <div className="min-h-[600px]">
+        <div className="flex items-center justify-center h-96">
+          <div className="text-center">
+            <Loader2 className="w-12 h-12 mx-auto mb-4 animate-spin text-emerald-500" />
+            <p className="text-xl text-slate-600 dark:text-slate-300">
+              Loading cryptocurrencies...
+            </p>
+          </div>
+        </div>
       </div>
     );
   }
@@ -274,15 +279,34 @@ const CoinData = () => {
   }
 
   if (!coin) {
-    return <div className="text-xl text-center">No details available for this coin.</div>;
+    return (
+      <div className="text-xl text-center">
+        No details available for this coin.
+      </div>
+    );
   }
 
   const {
-    symbol, image, current_price, market_cap, fully_diluted_valuation,
-    total_volume, high_24h, low_24h, price_change_24h,
-    price_change_percentage_24h, circulating_supply,
-    total_supply, ath, ath_change_percentage, ath_date,
-    atl, atl_change_percentage, atl_date, market_cap_rank, max_supply
+    symbol,
+    image,
+    current_price,
+    market_cap,
+    fully_diluted_valuation,
+    total_volume,
+    high_24h,
+    low_24h,
+    price_change_24h,
+    price_change_percentage_24h,
+    circulating_supply,
+    total_supply,
+    ath,
+    ath_change_percentage,
+    ath_date,
+    atl,
+    atl_change_percentage,
+    atl_date,
+    market_cap_rank,
+    max_supply,
   } = coin;
 
   const renderCard = (title: any, value: any, color?: any, suffix?: any) => (
@@ -290,7 +314,8 @@ const CoinData = () => {
       <CardContent className="p-4">
         <h2 className="font-semibold text-md text-muted-foreground">{title}</h2>
         <p className={`text-xl font-bold ${color || "text-foreground"}`}>
-          {value}{suffix || ""}
+          {value}
+          {suffix || ""}
         </p>
       </CardContent>
     </Card>
@@ -303,12 +328,19 @@ const CoinData = () => {
       transition={{ duration: 0.5 }}
       className="max-w-5xl px-4 pt-20 pb-10 mx-auto"
     >
-      <Link to="/coins" className="inline-flex items-center mb-4 text-sm hover:underline text-muted-foreground">
+      <Link
+        to="/coins"
+        className="inline-flex items-center mb-4 text-sm hover:underline text-muted-foreground"
+      >
         <FaAngleDoubleLeft className="mr-2" /> Back to Coins
       </Link>
 
       <div className="flex flex-col mb-6 md:flex-row md:items-center md:space-x-6">
-        <img src={image} alt={coin.name} className="w-24 h-24 border rounded-full md:w-32 md:h-32" />
+        <img
+          src={image}
+          alt={coin.name}
+          className="w-24 h-24 border rounded-full md:w-32 md:h-32"
+        />
         <div>
           <h1 className="text-3xl font-bold">{coin.name}</h1>
           <Badge className="mt-2">{symbol.toUpperCase()}</Badge>
@@ -319,23 +351,36 @@ const CoinData = () => {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {renderCard("Current Price", `₹${current_price.toLocaleString()}`)}
         {renderCard("Market Cap", `₹${Number(market_cap).toLocaleString()}`)}
-        {renderCard("Fully Diluted Valuation", `₹${Number(fully_diluted_valuation).toLocaleString()}`)}
-        {renderCard("Total Volume", `₹${Number(total_volume).toLocaleString()}`)}
+        {renderCard(
+          "Fully Diluted Valuation",
+          `₹${Number(fully_diluted_valuation).toLocaleString()}`
+        )}
+        {renderCard(
+          "Total Volume",
+          `₹${Number(total_volume).toLocaleString()}`
+        )}
         {renderCard("High (24h)", high_24h, "text-green-600")}
         {renderCard("Low (24h)", low_24h, "text-red-600")}
-        {renderCard("Price Change (24h)", price_change_24h,
-          price_change_24h >= 0 ? "text-green-600" : "text-red-600")}
+        {renderCard(
+          "Price Change (24h)",
+          price_change_24h,
+          price_change_24h >= 0 ? "text-green-600" : "text-red-600"
+        )}
         {/* {renderCard("Price Change % (24h)",
           `${price_change_percentage_24h}%`,
           price_change_percentage_24h >= 0 ? "text-green-600" : "text-red-600",
           price_change_percentage_24h >= 0 ? <ArrowUpRight size={16} /> : <ArrowDownRight size={16} />
         )} */}
         {renderCard(
-  "Price Change % (24h)",
-  `${price_change_percentage_24h}%`,
-  price_change_percentage_24h >= 0 ? "text-green-600" : "text-red-600",
-  price_change_percentage_24h >= 0 ? <ArrowUpRight size={16} /> : <ArrowDownRight size={16} />
-)}
+          "Price Change % (24h)",
+          `${price_change_percentage_24h}%`,
+          price_change_percentage_24h >= 0 ? "text-green-600" : "text-red-600",
+          price_change_percentage_24h >= 0 ? (
+            <ArrowUpRight size={16} />
+          ) : (
+            <ArrowDownRight size={16} />
+          )
+        )}
 
         {renderCard("Market Cap Rank", market_cap_rank)}
         {renderCard("Max Supply", max_supply || "N/A")}
@@ -350,7 +395,8 @@ const CoinData = () => {
       {/* Quote */}
       <div className="p-4 mt-8 text-center rounded-md shadow bg-muted">
         <blockquote className="italic text-md text-muted-foreground">
-          “The internet is for everyone. Digital currency is the next logical step.” – Anonymous
+          “The internet is for everyone. Digital currency is the next logical
+          step.” – Anonymous
         </blockquote>
       </div>
 
@@ -359,11 +405,15 @@ const CoinData = () => {
         <h2 className="mb-2 text-xl font-semibold">Additional Information</h2>
         <p>
           <strong>ATH Date:</strong>{" "}
-          <span className="text-green-500">{new Date(ath_date).toLocaleDateString()}</span>
+          <span className="text-green-500">
+            {new Date(ath_date).toLocaleDateString()}
+          </span>
         </p>
         <p>
           <strong>ATL Date:</strong>{" "}
-          <span className="text-red-500">{new Date(atl_date).toLocaleDateString()}</span>
+          <span className="text-red-500">
+            {new Date(atl_date).toLocaleDateString()}
+          </span>
         </p>
       </div>
 
