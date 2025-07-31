@@ -452,7 +452,7 @@
 
 
 import React, { useEffect, useRef, useState } from "react";
-import axios from "axios";
+
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
 import { ZoomIn, ZoomOut, AlertCircle } from "lucide-react";

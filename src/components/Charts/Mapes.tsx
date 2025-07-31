@@ -29,10 +29,11 @@ interface OhlcDataItem {
 }
 
 interface MapesProps {
-  name: string;
+  name: any;
 }
 
-function Mapes({ name }: MapesProps) {
+// const LineChart: React.FC<LineChartProps> = ({
+const Mapes: React.FC<MapesProps> = ({ name }) => {
   const [ohlcData, setOhlcData] = useState<OhlcDataItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -111,6 +112,6 @@ function Mapes({ name }: MapesProps) {
       />
     </div>
   );
-}
+};
 
 export default Mapes;

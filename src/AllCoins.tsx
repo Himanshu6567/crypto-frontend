@@ -373,6 +373,7 @@ const Allcoins: React.FC = () => {
           <div className="relative">
             <ArrowUpDown className="absolute w-5 h-5 transform -translate-y-1/2 left-3 top-1/2 text-slate-400" />
             <select
+              title="*"
               value={sortOption}
               onChange={handleSortChange}
               className="pl-10 pr-8 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 appearance-none cursor-pointer min-w-[200px]"
@@ -406,7 +407,8 @@ const Allcoins: React.FC = () => {
           ) : coins.length > 0 ? (
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {coins.map((coin) => (
-                <Link  to={`/coins/${coin.name}`}
+                <Link
+                  to={`/coins/${coin.name}`}
                   onClick={() => {
                     console.log(`Navigating to coin: ${coin.name}`);
                   }}

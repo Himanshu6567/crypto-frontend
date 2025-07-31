@@ -235,7 +235,10 @@ const CoinData = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+
+
   useEffect(() => {
+
     const fetchCoinDetails = async () => {
       try {
         const response = await fetch(`https://crypto-backend-2y2c.onrender.com/api/coindetails/${name}`);
@@ -282,7 +285,7 @@ const CoinData = () => {
     atl, atl_change_percentage, atl_date, market_cap_rank, max_supply
   } = coin;
 
-  const renderCard = (title: string, value: any, color?: string, suffix?: string) => (
+  const renderCard = (title: any, value: any, color?: any, suffix?: any) => (
     <Card className="transition duration-200 ease-in-out hover:shadow-lg">
       <CardContent className="p-4">
         <h2 className="font-semibold text-md text-muted-foreground">{title}</h2>
@@ -322,11 +325,18 @@ const CoinData = () => {
         {renderCard("Low (24h)", low_24h, "text-red-600")}
         {renderCard("Price Change (24h)", price_change_24h,
           price_change_24h >= 0 ? "text-green-600" : "text-red-600")}
-        {renderCard("Price Change % (24h)",
+        {/* {renderCard("Price Change % (24h)",
           `${price_change_percentage_24h}%`,
           price_change_percentage_24h >= 0 ? "text-green-600" : "text-red-600",
           price_change_percentage_24h >= 0 ? <ArrowUpRight size={16} /> : <ArrowDownRight size={16} />
-        )}
+        )} */}
+        {renderCard(
+  "Price Change % (24h)",
+  `${price_change_percentage_24h}%`,
+  price_change_percentage_24h >= 0 ? "text-green-600" : "text-red-600",
+  price_change_percentage_24h >= 0 ? <ArrowUpRight size={16} /> : <ArrowDownRight size={16} />
+)}
+
         {renderCard("Market Cap Rank", market_cap_rank)}
         {renderCard("Max Supply", max_supply || "N/A")}
         {renderCard("Circulating Supply", circulating_supply)}
