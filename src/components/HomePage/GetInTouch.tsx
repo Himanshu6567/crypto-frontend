@@ -65,18 +65,13 @@
 
 // export default GetInTouch;
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Card, CardContent } from "../../components/ui/card";
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
 import { Alert, AlertDescription } from "../../components/ui/alert";
 import {
-  TrendingUp,
-  Users,
-  Globe,
   Mail,
-  Github,
-  Linkedin,
   CheckCircle,
   AlertCircle,
 } from "lucide-react";

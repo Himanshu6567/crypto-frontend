@@ -41,7 +41,7 @@
 
 import React from "react";
 
-import { Github, Linkedin } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 // Enhanced Footer
 const Footer: React.FC = () => {
@@ -50,20 +50,20 @@ const Footer: React.FC = () => {
   const socialLinks = [
     {
       href: "https://github.com/Himanshu6567",
-      icon: <Github className="w-5 h-5" />,
+      icon: <FaGithub className="w-5 h-5" />,
       label: "GitHub",
       hoverColor: "hover:text-gray-300",
     },
     {
       href: "https://www.linkedin.com/in/himanshu-chandola-361a6924b/",
-      icon: <Linkedin className="w-5 h-5" />,
+      icon: <FaLinkedin className="w-5 h-5" />,
       label: "LinkedIn",
       hoverColor: "hover:text-blue-400",
     },
   ];
 
   return (
-    <footer className="border-t border-gray-800  bg-gray-900/95 backdrop-blur-sm">
+    <footer className="border-t border-gray-800 bg-gray-900/95 backdrop-blur-sm">
       <div className="absolute inset-0 opacity-50 bg-gradient-to-r from-gray-900 to-black"></div>
 
       <div className="container relative z-10 px-4 py-8 mx-auto">
