@@ -1,30 +1,3 @@
-// import React from "react";
-
-// const CryptoStatsSection: React.FC = () => {
-//   return (
-//     <section className="py-16 text-white bg-gray-800">
-//       <div className="container px-4 mx-auto text-center">
-//         <h2 className="mb-12 text-3xl font-bold">Cryptocurrency Market Statistics</h2>
-//         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-//           <div className="flex flex-col items-center">
-//             <span className="mb-2 text-6xl font-bold">10,000+</span>
-//             <p className="text-gray-300">Cryptocurrencies Listed</p>
-//           </div>
-//           <div className="flex flex-col items-center">
-//             <span className="mb-2 text-6xl font-bold">1.5B</span>
-//             <p className="text-gray-300">Daily Transactions</p>
-//           </div>
-//           <div className="flex flex-col items-center">
-//             <span className="mb-2 text-6xl font-bold">5.2%</span>
-//             <p className="text-gray-300">Market Growth</p>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default CryptoStatsSection;
 
 
 

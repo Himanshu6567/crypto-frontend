@@ -1,30 +1,4 @@
-// import React from "react";
 
-// const HeroSection: React.FC = () => {
-//   return (
-//     <section className="relative py-20 bg-gray-100">
-//       <div className="container flex flex-col items-center justify-between h-full px-4 mx-auto md:flex-row">
-//         <div className="md:w-1/2">
-//           <h1 className="mb-4 text-4xl font-bold text-gray-800 md:text-5xl">
-//             Ready to Elevate Your Investment Strategy?
-//           </h1>
-//           <p className="mb-6 text-lg text-gray-600 md:text-xl">
-//             Join us for real-time data, insights, and guidance to enhance your
-//             stock portfolio.
-//           </p>
-//           <button className="px-6 py-2 text-white transition duration-300 bg-green-500 rounded-full hover:bg-green-600">
-//             Get Started
-//           </button>
-//         </div>
-//         <div className="flex justify-center mt-8 md:w-1/2 md:mt-0">
-//           <img src="/stb.png" alt="Investment Insights" />
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default HeroSection;
 import React, { useState, useEffect } from "react";
 import { Button } from "../../components/ui/button";
 import { Card, CardContent } from "../../components/ui/card";
