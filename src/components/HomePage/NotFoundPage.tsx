@@ -16,7 +16,6 @@ import { Input } from "../../components/ui/input";
 import {
   Card,
   CardContent,
-
   CardHeader,
   CardTitle,
 } from "../../components/ui/card";
@@ -173,26 +172,7 @@ const NotFoundPage = () => {
             </Button>
           </div>
 
-          {/* Help Section */}
-          {/* <Card className="max-w-md mx-auto border-0 shadow-lg bg-gradient-to-r from-blue-50 to-purple-50">
-            <CardHeader className="pb-2">
-              <CardTitle className="flex items-center justify-center space-x-2 text-lg text-gray-800">
-                <Mail className="w-5 h-5" />
-                <span>Still Need Help?</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="mb-4 text-center text-gray-600">
-                Our crypto experts are here to help you navigate the markets.
-              </CardDescription>
-              <Button
-                variant="outline"
-                className="w-full transition-colors duration-200 bg-white hover:bg-gray-50"
-              >
-                Contact Support
-              </Button>
-            </CardContent>
-          </Card> */}
+  
         </div>
       </div>
 

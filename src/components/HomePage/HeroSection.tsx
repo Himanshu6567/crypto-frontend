@@ -73,14 +73,7 @@ const HeroSection: React.FC = () => {
                 Get Started Today
                 <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
               </Button>
-{/*               
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="px-8 py-4 text-lg font-semibold text-white transition-all duration-300 rounded-full border-white/30 hover:bg-white/10 backdrop-blur-md hover:border-emerald-400/50"
-              >
-                Watch Demo
-              </Button> */}
+
             </div>
 
             {/* Stats */}

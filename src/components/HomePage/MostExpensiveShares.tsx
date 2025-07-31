@@ -21,46 +21,7 @@ const MostExpensiveCryptos: React.FC<expensiveCryptosProps> = ({
   expensiveCoins,
   error,
 }) => {
-  // const [expensiveCoins, setExpensiveCoins] = useState<any[]>([]);
-  // const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState("");
-
-  const requiredCoins = [
-    "Bitcoin",
-    "Ethereum",
-    "Binance Coin",
-    "Avalanche",
-    "Solana",
-    "Monero",
-    "Aave",
-  ];
-
-  // useEffect(() => {
-  //   const fetchExpensiveCoins = async () => {
-  //     try {
-  //       const response = await fetch(
-  //         "https://crypto-backend-2y2c.onrender.com/api/allcoins"
-  //       );
-  //       if (!response.ok) {
-  //         throw new Error("Failed to fetch cryptocurrency data");
-  //       }
-  //       const data = await response.json();
-
-  //       const filteredCoins = data.coins.filter((coin: any) =>
-  //         requiredCoins.some((requiredCoin) =>
-  //           coin.name.toLowerCase().includes(requiredCoin.toLowerCase().trim())
-  //         )
-  //       );
-  //       setExpensiveCoins(filteredCoins);
-  //     } catch (error: any) {
-  //       setError(error.message);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-
-  //   fetchExpensiveCoins();
-  // }, []);
+ 
 
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat("en-IN", {
