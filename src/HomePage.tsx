@@ -15,13 +15,15 @@ const HomePage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
+  
   const requiredTrandingCoins = [
-    "Bitcoin",
+    "BNB",
     "Ethereum",
     "Tether",
     "Bittensor",
     "Aave",
     "kaspa",
+    "cWBTC",
   ];
 
   const requiredexpensiveCoins = [
@@ -31,12 +33,18 @@ const HomePage: React.FC = () => {
     "Avalanche",
     "Solana",
     "Monero",
+    "Ultima",
+    "pumpBTC",
     "Aave",
   ];
 
   const requiredLeastPriceCoins = [
     "Polygon",
     "The graph",
+    "Hamster Kombat",
+    "Bitkub Coin",
+    "Radix",
+    "Simon's Cat",
     "Core",
     "Beam",
     "Gala",
